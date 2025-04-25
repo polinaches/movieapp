@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(26, 26, 25);
+}
+
+.movie_title {
+    background-color: black;
+    color: rgb(181, 172, 172);
+}
+
+.container img {
+    border-radius: 19px;
+}
+
+.movie_column {
+    background-color: white;
+    border-top-right-radius: 36px;
+    border-bottom-right-radius: 36px;
+    width: 570px;
+    height: 75%;
+    margin-top: 65px;
+    height: 280px;
+    max-height: 280px;
+    overflow: hidden;
+    /* position: relative; */
+}
+
+.movie_column:focus {
+    max-height: none;
+}
+
+.movie_year {
+    color: rgb(181, 172, 172);
+    margin-left: 10px;
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 50px;
+}

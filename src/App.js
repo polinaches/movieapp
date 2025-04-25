@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./movies";
+import "./app.css"
+import "./movie.css"
 
 class App extends React.Component {
   state = {
@@ -23,11 +25,22 @@ class App extends React.Component {
 
   render() {
     const { isLoading, movies } = this.state;
-    return <div>{isLoading ? "Загрузка" : movies.map(movie => {
-      console.log(movie);
-      return (
-        <Movie id={movie.id} title={movie.title} summary={movie.summary} year={movie.year} poster={movie.medium_cover_image} />)
-    })}</div>
+    return (<section className="container">{isLoading ?
+      <h1><div className="loader">
+        <span className="loader_text">Подождите...
+        </span>
+      </div></h1> : movies.map(movie => {
+        return (
+          <div className="movies">
+            <Movie key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              summary={movie.summary}
+              year={movie.year}
+              poster={movie.medium_cover_image}
+              genres={movie.genres}
+            /></div>)
+      })}</section>)
   }
 }
 
