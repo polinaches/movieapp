@@ -16,16 +16,21 @@ body {
     border-top-right-radius: 36px;
     border-bottom-right-radius: 36px;
     width: 570px;
-    height: 75%;
     margin-top: 65px;
-    height: 280px;
+    /* height: 280px; */
     max-height: 280px;
     overflow: hidden;
-    /* position: relative; */
+    position: relative;
+    transition: height 0.3s ease-in;
 }
 
-.movie_column:focus {
-    max-height: none;
+.movie_column_expanded {
+    max-height: auto;
+    background-color: white;
+    border-top-right-radius: 36px;
+    border-bottom-right-radius: 36px;
+    width: 570px;
+    overflow: hidden;
 }
 
 .movie_year {
