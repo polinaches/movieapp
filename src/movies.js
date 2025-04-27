@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaCaretDown } from "react-icons/fa";
 import PropTypes from 'prop-types';
 
 function Movie({ id, title, summary, poster, year, genres }) {
@@ -15,9 +16,7 @@ function Movie({ id, title, summary, poster, year, genres }) {
             <ul className="genres">
                 {genres.map((genre, index) => { return <li key={index} className="genre_genre">{genre}</li> })}
             </ul>
-            <button className="button" onClick={togle}>
-                {isExpanded ? 'Свернуть' : 'Развернуть'}
-            </button>
+            <FaCaretDown className="button" onClick={togle} />
             <p className="movie_summary">{summary}</p>
 
         </div>
