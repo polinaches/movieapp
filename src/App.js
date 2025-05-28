@@ -21,27 +21,34 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getMovies();
-  }
+  };
 
   render() {
     const { isLoading, movies } = this.state;
-    return (<section className="container">{isLoading ?
-      <h1><div className="loader">
-        <span className="loader_text">Подождите...
-        </span>
-      </div></h1> : movies.map(movie => {
-        return (
-          <div className="movies">
-            <Movie key={movie.id}
-              id={movie.id}
-              title={movie.title}
-              summary={movie.summary}
-              year={movie.year}
-              poster={movie.medium_cover_image}
-              genres={movie.genres}
-            /></div>)
-      })}</section>)
-  }
-}
+    return (
+      <div className="app-container">
+        <section className="container">{isLoading ? (
+          <h1><div className="loader">
+            <span className="loader_text">Подождите...
+            </span>
+          </div></h1>) : movies.map(movie => {
+            return (
+              <div className="movies">
+                <Movie key={movie.id}
+                  id={movie.id}
+                  title={movie.title}
+                  summary={movie.summary}
+                  year={movie.year}
+                  poster={movie.medium_cover_image}
+                  genres={movie.genres} />
+              </div>)
+          })
+        }</section>
+        {!isLoading && <section className="filter">
+          <h1>Фильтры</h1>
+        </section>}
+      </div>);
+  };
+};
 
 export default App;
