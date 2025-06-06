@@ -45,7 +45,26 @@ class App extends React.Component {
           })
         }</section>
         {!isLoading && <section className="filter">
-          <h1>Фильтры</h1>
+          <h1 className="filters">Фильтры</h1>
+          <h4 className="fileter">Год выхода</h4>
+          <div className="inputt"><input type="range" className="fileter" /></div>
+          <h4 className="fileter">Жанры</h4>
+          <div className="genress">
+            <div style={{ width: '50%', float: 'left' }}>
+              <div><input type="checkbox" className="check" />Комедия</div>
+              <div><input type="checkbox" className="check" />Документальный</div>
+              <div><input type="checkbox" className="check" />Музыка</div>
+              <div><input type="checkbox" className="check" />Ужасы</div>
+            </div>
+            <div style={{ width: '50%', float: 'left' }}>
+              <div><input type="checkbox" className="check" />Мелодрама</div>
+              <div><input type="checkbox" className="check" />Драма</div>
+              <div><input type="checkbox" className="check" />Мультики</div>
+              <div><input type="checkbox" className="check" />Семейный</div>
+            </div>
+          </div>
+          <div className="div_submit"><input type="submit" className="submit" value="Найти" /></div>
+
         </section>}
       </div>);
   };
