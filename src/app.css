@@ -112,12 +112,17 @@ body {
     accent-color: grey;
 }
 
+.inputt:hover {
+    cursor: pointer;
+}
+
 .inputt:active {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -10px;
     accent-color: rgb(44, 44, 44);
+    cursor: pointer;
 }
 
 .genress {
@@ -133,6 +138,7 @@ body {
 
 .check:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .div_submit {
@@ -148,4 +154,26 @@ body {
     padding: 4px;
     border-radius: 5px;
     width: 90px;
+    border: 0.5px solid rgb(185, 185, 185);
+}
+
+.submit:hover {
+    background-color: rgb(188, 188, 188);
+    border: none;
+    cursor: pointer;
+}
+
+#year1 {
+    position: absolute;
+    color: rgba(87, 83, 83, 0.596);
+    right: 66%;
+    font-size: smaller;
+}
+
+#year2 {
+    position: absolute;
+    color: rgba(87, 83, 83, 0.596);
+    right: 27%;
+    font-size: smaller;
+
 }

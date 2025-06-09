@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import PropTypes from 'prop-types';
 
+
 function Movie({ id, title, summary, poster, year, genres }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [showButton, setshowButton] = useState(false);
@@ -20,6 +21,19 @@ function Movie({ id, title, summary, poster, year, genres }) {
     const togle = () => {
         setIsExpanded(!isExpanded);
     };
+
+    // const [rangeValue, SetRangeValue] = useState(2000);
+    // const [displayYear, SetDisplayYear] = useState("2000");
+
+
+    // useEffect(() => {
+    //     const NewYear = parseInt(rangeValue, 10);
+    //     const Newrange = YearsFilms.find(range => NewYear < range.maxYear);
+    //     if (Newrange) {
+    //         SetDisplayText(Newrange.text)
+    //     }
+    // }, [rangeValue]);
+
     return (<div className="movie">
         <img src={poster} alt={title} title={title} />
         <div className={`movie_column${isExpanded ? '_expanded' : ''}`} key={Movie.id} ref={MovieColymnRef} >
@@ -30,10 +44,12 @@ function Movie({ id, title, summary, poster, year, genres }) {
                 {genres.map((genre, index) => { return <li key={index} className="genre_genre">{genre}</li> })}
             </ul>
             {showButton && <FaCaretDown className="button" onClick={togle} tabindex="0" />}
-            <p className="movie_summary">{summary}</p>        </div>
+            <p className="movie_summary">{summary}</p>
+        </div>
 
     </div>)
 }
+
 
 Movie.propTypes = {
     id: PropTypes.number.isRequired,
